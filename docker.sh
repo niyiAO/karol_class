@@ -1,3 +1,7 @@
+#!/bin/bash
+
+#shell script to install docker
+
 sudo apt-get update
 
 sudo add-apt-repository \
@@ -10,4 +14,4 @@ sudo apt-get -y --force-yes install docker-ce
 sudo apt-get -y upgrade
 
 sudo groupadd docker
-sudo usermod -aG docker vagrant
+sudo usermod -aG docker $USER
