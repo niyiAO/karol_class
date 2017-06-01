@@ -1,0 +1,15 @@
+version: '2'
+services:
+  app:
+    build: .
+    volumes:
+      - /vagrant/app/log:/app/log
+      - /vagrant/app/data:/app/data
+      - /vagrant/app/custom:/app/custom
+      - /vagrant/app/gitea-repositories:/app/gitea-repositories
+  lb:
+    image: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - /vagrant/app/nginx.conf:/etc/nginx/conf.d/default.conf
